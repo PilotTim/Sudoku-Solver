@@ -1,5 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+
+#include "read_sku.h"
 
 #define BIT(_X) ( 1 << (_X) )
 #define ALL_SET ( \
@@ -108,6 +111,8 @@ int main(int argc, char **argv)
         { 8,2,3,4,5,6,7,8,9},
         { 9,2,3,4,5,6,7,8,9},
     };
+    unsigned int *mydata = malloc(sizeof(unsigned int) * 9 * 9);
+    read_sku("set1.sku", mydata);
     memcpy(grid, mygrid, sizeof(unsigned int) * 9*9);
     for ( i=0; i<9; i++ )
     {
